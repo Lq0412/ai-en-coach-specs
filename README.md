@@ -89,10 +89,6 @@ milestone-manager/
 │       ├── product-killshot/
 │       ├── release-tag/
 │       └── web-to-design-md/
-├── .github/ISSUE_TEMPLATE/
-│   └── proposal.md                  ← 产品提案模板
-├── .githooks/
-│   └── commit-msg                   ← 去除 AI 协作者签名
 ├── .gitignore
 └── README.md
 ```
