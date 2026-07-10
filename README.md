@@ -35,7 +35,6 @@
 ```bash
 git clone https://github.com/Lq0412/ai-en-coach-specs.git
 cp -r ai-en-coach-specs/.claude/skills/ your-project/.claude/skills/
-cp ai-en-coach-specs/.githooks/commit-msg your-project/.githooks/
 ```
 
 需要哪个 skill 就复制哪个，不一定要全装。
