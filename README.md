@@ -12,8 +12,8 @@
 |-------|---------|--------|
 | `issue-standard` | 写 Issue | 四段模板、标签体系、拆分规则、关联 Milestone |
 | `code-discipline` | 编码 | 决策阶梯（YAGNI→标准库→原生→依赖→最小实现）、禁止兜底和猜测性代码 |
-| `pr-commit` | 提交 | Conventional Commits 格式、PR 四段描述、分支命名 |
-| `branch-commit` | 提 PR | 分支生命周期、自检清单、合入后自动删分支 |
+| `pr-commit` | 提交 & 提 PR | Conventional Commits 格式、PR 四段描述、分支命名 |
+| `branch-commit` | 分支管理 | 分支生命周期、提交频率、自检清单、合入后自动删分支 |
 | `pr-review` | Review | 五维 Review 清单、合入条件核验、意见格式规范 |
 | `release-tag` | 发版 | Tag 命名、Release Notes 模板、`gh release create` |
 | `milestone-manager` | 全程 | MS 结构定义、Issue-Milestone 关联检查、进度偏差预警 |
@@ -41,15 +41,19 @@ cp -r ai-en-coach-specs/.claude/skills/ your-project/.claude/skills/
 
 ### 全局安装
 
-所有项目通用：
+先 clone 仓库，再按需创建软链接：
 
 ```bash
+git clone https://github.com/Lq0412/ai-en-coach-specs.git
+cd ai-en-coach-specs
 ln -s $(pwd)/.claude/skills/milestone-manager ~/.claude/skills/milestone-manager
 ln -s $(pwd)/.claude/skills/pr-commit ~/.claude/skills/pr-commit
 # …选择你需要的 skill
 ```
 
 ### Codex (OpenAI)
+
+> 需确认 Codex 当前版本的 skills 安装路径。
 
 ```bash
 cp -r .claude/skills/issue-standard ~/.codex/skills/issue-standard
@@ -59,9 +63,7 @@ cp -r .claude/skills/pr-commit ~/.codex/skills/pr-commit
 
 ## 操作与数据分离
 
-Skill 文件只管操作逻辑（怎么做），项目参数（什么时间、多少人、Issue 配额）放在独立数据文件中。换项目只改数据文件，skill 原样复用。
-
-以 `milestone-manager` 为例：
+**操作与数据分离**是 skill 的设计原则之一。以 `milestone-manager` 为例——skill 文件只管操作逻辑（怎么做），项目参数（什么时间、多少人、Issue 配额）放在独立数据文件中。换项目只改数据文件，skill 原样复用：
 
 ```
 milestone-manager/

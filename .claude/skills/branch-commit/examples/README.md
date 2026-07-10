@@ -2,9 +2,9 @@
 
 ## 示例 1：新人问分支怎么取
 
-**用户：** 「开始做 ASR WebSocket 集成，帮我想个分支名」
+**用户：** 「开始做用户认证模块，帮我想个分支名」
 
-**期望行为：** 输出 `feat/asr-websocket-integration`，并提醒从 `dev` 切、做完合回 `dev`。
+**期望行为：** 输出 `feat/user-auth-flow`，并提醒从 `dev` 切、做完合回 `dev`。
 
 ## 示例 2：检查团队 git 状态
 

@@ -40,7 +40,7 @@ main          ← 可发布版本
 
 ### 规则
 
-- 分支名用英文 kebab-case：`feat/asr-websocket-integration`
+- 分支名用英文 kebab-case：`feat/user-auth-flow`
 - **一个分支 = 一个 Issue**。禁止一个分支同时修两个 Issue
 - 开始写代码前先 rebase `dev`，确认没有冲突
 - 合并到 `dev` 后立刻删分支
